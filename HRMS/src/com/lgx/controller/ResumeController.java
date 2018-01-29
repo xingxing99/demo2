@@ -14,12 +14,15 @@ import java.util.List;
 public class ResumeController {
     @Resource
     private ResumeService resumeService;
+
     @RequestMapping("selectResume")
     public String selectResume(HttpSession session)throws Exception{
         User user = (User) session.getAttribute("user");
         List<Resume> resumes = resumeService.selectResume(user.getId());
         if (resumes.size()!=0){
-            return "";
+            session.setAttribute("user",user);
+            session.setAttribute("resumes",resumes);
+            return "resume";
         }
         session.setAttribute("r1","没有简历，请添加");
         return "tourist";

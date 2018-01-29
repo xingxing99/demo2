@@ -7,4 +7,5 @@ import java.util.List;
 
 public interface ResumeMapper {
     List<Resume> selectResume(int uid);
+    boolean addResume(Resume resume);
 }

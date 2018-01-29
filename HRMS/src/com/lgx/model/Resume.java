@@ -14,11 +14,13 @@ public class Resume implements Serializable {
     private String skill;//技能
     private String evaluate;//自我评价
     private Date createTime;
+    private int state;//简历状态
+    private String degree;//学位
 
     public Resume() {
     }
 
-    public Resume(int id, int uid, String major, String school, String education, String address, String experience, String skill, String evaluate, Date createTime) {
+    public Resume(int id, int uid, String major, String school, String education, String address, String experience, String skill, String evaluate, Date createTime, int state, String degree) {
         this.id = id;
         this.uid = uid;
         this.major = major;
@@ -29,6 +31,8 @@ public class Resume implements Serializable {
         this.skill = skill;
         this.evaluate = evaluate;
         this.createTime = createTime;
+        this.state = state;
+        this.degree = degree;
     }
 
     public int getId() {
@@ -111,6 +115,21 @@ public class Resume implements Serializable {
         this.createTime = createTime;
     }
 
+    public int getState() {
+        return state;
+    }
+
+    public void setState(int state) {
+        this.state = state;
+    }
+
+    public String getDegree() {
+        return degree;
+    }
+
+    public void setDegree(String degree) {
+        this.degree = degree;
+    }
 
     @Override
     public String toString() {
@@ -125,6 +144,8 @@ public class Resume implements Serializable {
                 ", skill='" + skill + '\'' +
                 ", evaluate='" + evaluate + '\'' +
                 ", createTime=" + createTime +
+                ", state=" + state +
+                ", degree='" + degree + '\'' +
                 '}';
     }
 }
