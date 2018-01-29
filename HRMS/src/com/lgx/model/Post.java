@@ -5,16 +5,16 @@ import java.io.Serializable;
 public class Post implements Serializable {
     private int id;
     private String name;//职位名称
-    private Dept dept;//对应部门
+    private int did;//对应部门
     private String describe;//描述
 
     public Post() {
     }
 
-    public Post(int id, String name, Dept dept, String describe) {
+    public Post(int id, String name, int did, String describe) {
         this.id = id;
         this.name = name;
-        this.dept = dept;
+        this.did = did;
         this.describe = describe;
     }
 
@@ -34,12 +34,12 @@ public class Post implements Serializable {
         this.name = name;
     }
 
-    public Dept getDept() {
-        return dept;
+    public int getDid() {
+        return did;
     }
 
-    public void setDept(Dept dept) {
-        this.dept = dept;
+    public void setDid(int did) {
+        this.did = did;
     }
 
     public String getDescribe() {
@@ -55,7 +55,7 @@ public class Post implements Serializable {
         return "Post{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", dept=" + dept +
+                ", did=" + did +
                 ", describe='" + describe + '\'' +
                 '}';
     }

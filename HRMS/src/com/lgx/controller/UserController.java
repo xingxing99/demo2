@@ -39,7 +39,7 @@ public class UserController {
         return "register";
     }
     @RequestMapping("login")
-    public String login(User user, HttpSession session,int identity)throws Exception{
+    public String login(User user, HttpSession session,int identity,String name,String password)throws Exception{
         if (user!=null){
             if (identity==0){
                 User user1 = userService.selectUser(user);
@@ -50,7 +50,9 @@ public class UserController {
             }else if(identity==1){
 
             }else{
-
+                if (name.equals("admin")&&password.equals("admin")){
+                    return "admin/homepage";
+                }
             }
         }
         return "../../index";

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.lgx.dao.PostMapper">
+    <insert id="addPost">
+      insert into post(name, did, describe) VALUES (#{name},#{did},#{describe})
+    </insert>
+    <select id="selectPost" resultType="com.lgx.model.Post">
+        select * from post;
+    </select>
+    <select id="selectPostByDid" resultType="com.lgx.model.Post">
+        select * from post where did=#{did}
+    </select>
+</mapper>

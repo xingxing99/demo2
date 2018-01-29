@@ -830,199 +830,279 @@
     <table id="210" parent="3" name="post">
       <Engine>InnoDB</Engine>
     </table>
-    <table id="211" parent="3" name="resume">
+    <table id="211" parent="3" name="recruit">
       <Engine>InnoDB</Engine>
     </table>
-    <table id="212" parent="3" name="user">
+    <table id="212" parent="3" name="resume">
       <Engine>InnoDB</Engine>
     </table>
-    <column id="213" parent="208" name="did">
+    <table id="213" parent="3" name="user">
+      <Engine>InnoDB</Engine>
+    </table>
+    <column id="214" parent="208" name="did">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="214" parent="208" name="dname">
+    <column id="215" parent="208" name="dname">
       <Position>2</Position>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="215" parent="208" name="createTime">
+    <column id="216" parent="208" name="createTime">
       <Position>3</Position>
       <DataType>datetime|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="216" parent="208" name="PRIMARY">
+    <key id="217" parent="208" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>did</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="217" parent="209" name="id">
+    <column id="218" parent="209" name="id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="218" parent="209" name="empNo">
+    <column id="219" parent="209" name="empNo">
       <Position>2</Position>
       <DataType>int(11)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="219" parent="209" name="pid">
+    <column id="220" parent="209" name="pid">
       <Position>3</Position>
       <DataType>int(255)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="220" parent="209" name="state">
+    <column id="221" parent="209" name="state">
       <Position>4</Position>
       <DataType>int(11)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="221" parent="209" name="uid">
+    <column id="222" parent="209" name="uid">
       <Position>5</Position>
       <DataType>int(11)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="222" parent="209" name="createTime">
+    <column id="223" parent="209" name="createTime">
       <Position>6</Position>
       <DataType>datetime|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="223" parent="209" name="PRIMARY">
+    <key id="224" parent="209" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="224" parent="210" name="id">
+    <column id="225" parent="210" name="id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="225" parent="210" name="name">
+    <column id="226" parent="210" name="name">
       <Position>2</Position>
       <DataType>varchar(255)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="226" parent="210" name="did">
+    <column id="227" parent="210" name="did">
       <Position>3</Position>
       <DataType>int(11)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="227" parent="210" name="describe">
+    <column id="228" parent="210" name="describe">
       <Position>4</Position>
       <DataType>varchar(255)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="228" parent="210" name="PRIMARY">
+    <key id="229" parent="210" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="229" parent="211" name="id">
+    <column id="230" parent="211" name="id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="230" parent="211" name="uid">
+    <column id="231" parent="211" name="pid">
       <Position>2</Position>
       <DataType>int(11)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="231" parent="211" name="major">
+    <column id="232" parent="211" name="requirement">
       <Position>3</Position>
       <DataType>varchar(255)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="232" parent="211" name="school">
+    <column id="233" parent="211" name="salaryRange">
       <Position>4</Position>
-      <DataType>varchar(255)|0</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="233" parent="211" name="education">
-      <Position>5</Position>
       <DataType>varchar(255)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="234" parent="211" name="address">
+      <Position>5</Position>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="235" parent="211" name="state">
       <Position>6</Position>
-      <DataType>varchar(255)|0</DataType>
+      <DataType>int(11)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="235" parent="211" name="experience">
+    <column id="236" parent="211" name="createTime">
       <Position>7</Position>
-      <DataType>varchar(255)|0</DataType>
+      <DataType>datetime|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="236" parent="211" name="skill">
+    <column id="237" parent="211" name="introduction">
       <Position>8</Position>
       <DataType>varchar(255)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="237" parent="211" name="evaluate">
-      <Position>9</Position>
-      <DataType>varchar(255)|0</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="238" parent="211" name="createTime">
-      <Position>10</Position>
-      <DataType>datetime|0</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="239" parent="211" name="pid">
-      <Position>11</Position>
-      <DataType>int(255)|0</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <key id="240" parent="211" name="PRIMARY">
+    <key id="238" parent="211" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="241" parent="212" name="id">
+    <column id="239" parent="212" name="id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="242" parent="212" name="name">
+    <column id="240" parent="212" name="uid">
       <Position>2</Position>
-      <DataType>varchar(255)|0</DataType>
+      <DataType>int(11)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="243" parent="212" name="password">
+    <column id="241" parent="212" name="major">
       <Position>3</Position>
       <DataType>varchar(255)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="244" parent="212" name="sex">
+    <column id="242" parent="212" name="school">
       <Position>4</Position>
       <DataType>varchar(255)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="245" parent="212" name="age">
+    <column id="243" parent="212" name="education">
       <Position>5</Position>
-      <DataType>int(11)|0</DataType>
+      <DataType>varchar(255)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="246" parent="212" name="phone">
+    <column id="244" parent="212" name="address">
       <Position>6</Position>
       <DataType>varchar(255)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="247" parent="212" name="email">
+    <column id="245" parent="212" name="experience">
       <Position>7</Position>
       <DataType>varchar(255)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="248" parent="212" name="PRIMARY">
+    <column id="246" parent="212" name="skill">
+      <Position>8</Position>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="247" parent="212" name="evaluate">
+      <Position>9</Position>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="248" parent="212" name="createTime">
+      <Position>10</Position>
+      <DataType>datetime|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="249" parent="212" name="state">
+      <Position>11</Position>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="250" parent="212" name="degree">
+      <Position>12</Position>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="251" parent="212" name="name">
+      <Position>13</Position>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="252" parent="212" name="sex">
+      <Position>14</Position>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="253" parent="212" name="phone">
+      <Position>15</Position>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="254" parent="212" name="email">
+      <Position>16</Position>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="255" parent="212" name="age">
+      <Position>17</Position>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="256" parent="212" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="257" parent="213" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="258" parent="213" name="name">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="259" parent="213" name="password">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="260" parent="213" name="sex">
+      <Position>4</Position>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="261" parent="213" name="age">
+      <Position>5</Position>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="262" parent="213" name="phone">
+      <Position>6</Position>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="263" parent="213" name="email">
+      <Position>7</Position>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="264" parent="213" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>

@@ -15,7 +15,34 @@ public class ResumeServiceImpl implements ResumeService {
     private ResumeMapper resumeMapper;
 
     @Override
-    public List<Resume> selectResume(int uid) {
+    public Resume selectResume(int uid) {
         return resumeMapper.selectResume(uid);
+    }
+
+    @Override
+    public boolean addResume(Resume resume) {
+        try {
+            return resumeMapper.addResume(resume);
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+    @Override
+    public boolean updateResume(Resume resume) {
+        try {
+            return resumeMapper.updateResume(resume);
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+    @Override
+    public boolean updateResumeState(Resume resume) {
+        try {
+            return resumeMapper.updateResumeState(resume);
+        } catch (Exception e) {
+            return false;
+        }
     }
 }

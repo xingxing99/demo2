@@ -6,5 +6,8 @@ import com.lgx.model.User;
 import java.util.List;
 
 public interface ResumeService {
-    List<Resume> selectResume(int uid);
+    Resume selectResume(int uid);
+    boolean addResume(Resume resume);
+    boolean updateResume(Resume resume);
+    boolean updateResumeState(Resume resume);
 }
