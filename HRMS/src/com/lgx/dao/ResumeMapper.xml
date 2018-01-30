@@ -11,8 +11,14 @@
     <update id="updateResumeState">
         update resume set state=#{state},rid=#{rid}
     </update>
+    <update id="updateResumeState2">
+        update resume set state=#{state},interview=#{interview}
+    </update>
 
     <select id="selectResume"  resultType="com.lgx.model.Resume">
         select * from resume where uid=#{uid}
+    </select>
+    <select id="selectResumeByState" resultType="com.lgx.model.Resume">
+        select * from resume where state=#{state}
     </select>
 </mapper>

@@ -2,8 +2,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: 刘广兴1
-  Date: 2018/1/26
-  Time: 17:25
+  Date: 2018/1/29
+  Time: 18:39
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -22,13 +22,16 @@
     </style>
 </head>
 <body>
-${sessionScope.r1}
-${sessionScope.r2}
-<a href="addResume">添加</a>
-<form action="updateResume" method="post">
 <table border="1" cellspacing="0"  align="center" width="550" >
     <tr align="center">
         <td align="center" colspan="6">个人简历</td>
+    </tr>
+    <tr align="center">
+        <c:forEach items="${sessionScope.posts}" var="post">
+            <c:if test="${sessionScope.recruit.pid==post.id}">
+                <td align="center" colspan="6">申请职位:${post.name}</td>
+            </c:if>
+        </c:forEach>
     </tr>
     <tr align="center">
         <td rowspan="4">个人信息</td>
@@ -78,7 +81,12 @@ ${sessionScope.r2}
         <td colspan="5">${sessionScope.resumes.experience}</td>
     </tr>
 </table>
-    <input type="submit" value="修改简历" id="i1">
-</form>
+    <c:if test="${sessionScope.resumes.state==1}">
+        <form action="inform" method="post">
+            <input type="hidden" name="uid" value="${sessionScope.resumes.uid}">
+            <input>
+            <input type="submit" value="通知面试" id="i1">
+        </form>
+    </c:if>
 </body>
 </html>

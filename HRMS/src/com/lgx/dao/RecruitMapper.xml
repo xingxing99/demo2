@@ -11,4 +11,7 @@
     <select id="selectRecruit" resultType="com.lgx.model.Recruit">
         select * from recruit;
     </select>
+    <select id="selectRecruitById" resultType="com.lgx.model.Recruit">
+        select * from recruit where id=#{id}
+    </select>
 </mapper>

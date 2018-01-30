@@ -35,4 +35,9 @@ public class RecruitServiceImpl implements RecruitService {
             return false;
         }
     }
+
+    @Override
+    public Recruit selectRecruitById(int id) {
+        return recruitMapper.selectRecruitById(id);
+    }
 }

@@ -45,4 +45,18 @@ public class ResumeServiceImpl implements ResumeService {
             return false;
         }
     }
+
+    @Override
+    public Resume selectResumeByState(Resume resume) {
+        return resumeMapper.selectResumeByState(resume);
+    }
+
+    @Override
+    public boolean updateResumeState2(Resume resume) {
+        try {
+            return resumeMapper.updateResumeState2(resume);
+        } catch (Exception e) {
+            return false;
+        }
+    }
 }

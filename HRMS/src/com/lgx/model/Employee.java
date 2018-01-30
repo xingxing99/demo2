@@ -5,21 +5,19 @@ import java.util.Date;
 
 public class Employee implements Serializable{
     private int id;
-    private int empNo;
-    private Dept dept;
+    private int pid;
     private int state;
-    private User user;
+    private int uid;
     private Date createTime;
 
     public Employee() {
     }
 
-    public Employee(int id, int empNo, Dept dept, int state, User user, Date createTime) {
+    public Employee(int id, int pid, int state, int uid, Date createTime) {
         this.id = id;
-        this.empNo = empNo;
-        this.dept = dept;
+        this.pid = pid;
         this.state = state;
-        this.user = user;
+        this.uid = uid;
         this.createTime = createTime;
     }
 
@@ -31,16 +29,6 @@ public class Employee implements Serializable{
         this.id = id;
     }
 
-    public int getEmpNo() {
-        return empNo;
-    }
-
-    public void setEmpNo(int empNo) {
-        this.empNo = empNo;
-    }
-
-
-
     public int getState() {
         return state;
     }
@@ -49,20 +37,12 @@ public class Employee implements Serializable{
         this.state = state;
     }
 
-    public Dept getDept() {
-        return dept;
+    public int getUid() {
+        return uid;
     }
 
-    public void setDept(Dept dept) {
-        this.dept = dept;
-    }
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
+    public void setUid(int uid) {
+        this.uid = uid;
     }
 
     public Date getCreateTime() {
@@ -73,14 +53,21 @@ public class Employee implements Serializable{
         this.createTime = createTime;
     }
 
+    public int getPid() {
+        return pid;
+    }
+
+    public void setPid(int pid) {
+        this.pid = pid;
+    }
+
     @Override
     public String toString() {
         return "Employee{" +
                 "id=" + id +
-                ", empNo=" + empNo +
-                ", dept=" + dept +
+                ", pid=" + pid +
                 ", state=" + state +
-                ", user=" + user +
+                ", uid=" + uid +
                 ", createTime=" + createTime +
                 '}';
     }

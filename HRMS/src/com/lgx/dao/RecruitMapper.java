@@ -8,4 +8,5 @@ public interface RecruitMapper {
     List<Recruit> selectRecruit();
     boolean addRecruit(Recruit recruit);
     boolean updateRecruit(Recruit recruit);
+    Recruit selectRecruitById(int id);
 }
