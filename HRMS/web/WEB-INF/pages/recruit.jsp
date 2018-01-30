@@ -20,6 +20,7 @@
 <table border="1" cellpadding="1" cellspacing="0">
     <tr>
         <th>招聘职位</th>
+        <th>职位介绍</th>
         <th>职位需求</th>
         <th>薪资待遇</th>
         <th>工作地址</th>
@@ -31,6 +32,7 @@
     <c:if test="${post.id==rei.pid}">
     <tr>
         <td>${post.name}</td>
+        <td>${post.description}</td>
         <td>${rei.requirement}</td>
         <td>${rei.salaryRange}</td>
         <td>${rei.address}</td>

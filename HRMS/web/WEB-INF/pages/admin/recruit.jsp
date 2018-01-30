@@ -23,6 +23,7 @@ ${sessionScope.r2}
     <tr>
         <th>招聘id</th>
         <th>招聘职位</th>
+        <th>职位介绍</th>
         <th>职位需求</th>
         <th>薪资待遇</th>
         <th>工作地址</th>
@@ -36,6 +37,7 @@ ${sessionScope.r2}
                 <tr>
                 <td>${rei.id}</td>
                 <td>${post.name}</td>
+                <td>${post.description}</td>
                 <td>${rei.requirement}</td>
                 <td>${rei.salaryRange}</td>
                 <td>${rei.address}</td>

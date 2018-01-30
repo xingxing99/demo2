@@ -47,8 +47,8 @@ public class ResumeServiceImpl implements ResumeService {
     }
 
     @Override
-    public Resume selectResumeByState(Resume resume) {
-        return resumeMapper.selectResumeByState(resume);
+    public List<Resume> selectResumeByState(int i,int j) {
+        return resumeMapper.selectResumeByState(i, j);
     }
 
     @Override

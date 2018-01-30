@@ -73,7 +73,7 @@ public class RecruitController {
 
     @RequestMapping("getAllRecruit")
     public String getAllRecruit(HttpSession session)throws Exception{
-        List<Recruit> recruits = recruitService.selectRecruit();
+        List<Recruit> recruits = recruitService.selectRecruitByState(1);
         if (recruits.size()!=0){
             List<Post> posts =postService.selectPost();
             session.setAttribute("posts",posts);

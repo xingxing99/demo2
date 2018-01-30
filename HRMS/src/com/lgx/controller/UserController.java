@@ -1,6 +1,8 @@
 package com.lgx.controller;
 
+import com.lgx.model.Employee;
 import com.lgx.model.User;
+import com.lgx.service.EmployeeService;
 import com.lgx.service.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,7 +17,8 @@ public class UserController {
 
     @Resource
     private UserService userService;
-
+    @Resource
+    private EmployeeService employeeService;
     @RequestMapping("/register")
     public String register()throws Exception{
         return "register";
@@ -48,7 +51,11 @@ public class UserController {
                     return "tourist";
                 }
             }else if(identity==1){
-
+                User user1 = userService.selectUser(user);
+                Employee employee = employeeService.selectEmployeeByUid(user1.getId());
+                if (employee!=null){
+                    return "employee/employeeSuccess";
+                }
             }else{
                 if (name.equals("admin")&&password.equals("admin")){
                     return "admin/homepage";

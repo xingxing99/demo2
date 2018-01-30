@@ -17,6 +17,7 @@
     <title></title>
 </head>
 <body>
+${sessionScope.p1}
 <table border="1" cellpadding="1" cellspacing="0">
     <tr>
         <th>职位id</th>
@@ -27,10 +28,23 @@
     <c:forEach items="${sessionScope.post}" var="post">
         <c:forEach items="${sessionScope.depts}" var="depts">
             <c:if test="${post.did==depts.did}">
-                <td>${post.id}</td>
-                <td>${post.name}</td>
-                <td>${depts.dname}</td>
-                <td>${post.describe}</td>
+                <tr>
+                    <td>${post.id}</td>
+                    <td>${post.name}</td>
+                    <td>${depts.dname}</td>
+                    <td>${post.description}</td>
+                    <td>
+                        <a href="selectPostByPid?pid=${post.id}">查看该职位下员工</a>
+                    </td>
+                    <td>
+                        <form action="deletePost" method="post">
+                            <input type="hidden" value="${post.id}" name="id">
+                            <input type="hidden" value="${post.did}" name="did">
+                            <input type="submit" value="删除">
+                        </form>
+                    </td>
+                </tr>
+                <a href="addPost?did=${depts.did}">添加职位</a>
             </c:if>
         </c:forEach>
     </c:forEach>

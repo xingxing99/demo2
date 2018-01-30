@@ -9,4 +9,5 @@ public interface RecruitMapper {
     boolean addRecruit(Recruit recruit);
     boolean updateRecruit(Recruit recruit);
     Recruit selectRecruitById(int id);
+    List<Recruit> selectRecruitByState(int state);
 }

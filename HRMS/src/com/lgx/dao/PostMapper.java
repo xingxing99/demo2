@@ -8,4 +8,6 @@ public interface PostMapper {
     List<Post> selectPost();
     boolean addPost(Post post);
     List<Post> selectPostByDid(int did);
+    boolean deletePostByDid(int did);
+    boolean deletePostById(int id);
 }

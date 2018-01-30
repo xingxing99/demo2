@@ -19,6 +19,6 @@
         select * from resume where uid=#{uid}
     </select>
     <select id="selectResumeByState" resultType="com.lgx.model.Resume">
-        select * from resume where state=#{state}
+        select * from resume where state=#{0} or state =#{1}
     </select>
 </mapper>

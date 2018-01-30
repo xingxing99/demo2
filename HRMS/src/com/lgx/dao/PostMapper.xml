@@ -2,8 +2,14 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.lgx.dao.PostMapper">
     <insert id="addPost">
-      insert into post(name, did, describe) VALUES (#{name},#{did},#{describe})
+      insert into post(name, did,description) VALUES (#{name},#{did},#{description})
     </insert>
+    <delete id="deletePostByDid">
+        delete from post where did=#{did}
+    </delete>
+    <delete id="deletePostById">
+        DELETE from post where id=#{id}
+    </delete>
     <select id="selectPost" resultType="com.lgx.model.Post">
         select * from post;
     </select>

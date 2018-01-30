@@ -98,12 +98,10 @@ public class ResumeController {
 
     @RequestMapping("selectResumeByState")
     public String selectResumeByState(HttpSession session,Resume resume1)throws Exception{
-        resume1.setState(1);
-        Resume resume = resumeService.selectResumeByState(resume1);
-        if (resume!=null){
+        List<Resume> resume = resumeService.selectResumeByState(1,3);
+        if (resume.size()!=0){
             session.setAttribute("resumes",resume);
-            int rid = resume.getRid();
-            session.setAttribute("recruit",recruitService.selectRecruitById(rid));
+            session.setAttribute("recruit",recruitService.selectRecruit());
             List<Post> posts =postService.selectPost();
             session.setAttribute("posts",posts);
             return "admin/resume";
@@ -114,10 +112,10 @@ public class ResumeController {
     }
 
     @RequestMapping("inform")
-    public String inform(HttpSession session,int uid)throws Exception{
+    public String inform(HttpSession session,int uid,String interview)throws Exception{
         Resume resume = resumeService.selectResume(uid);
         resume.setState(2);
-        resume.setInterview(new Date()+"后天上午9：00点来面试");
+        resume.setInterview(interview);
         if (resumeService.updateResumeState2(resume)){
             session.setAttribute("r10","通知成功");
             return "admin/homepage";
@@ -146,6 +144,21 @@ public class ResumeController {
             return "tourist";
         }else{
             session.setAttribute("r99","接受不成功");
+            return "tourist";
+        }
+    }
+
+    @RequestMapping("cancelInterview")
+    public String cancelInterview(HttpSession session)throws Exception{
+        User user = (User) session.getAttribute("user");
+        Resume resumes = resumeService.selectResume(user.getId());
+        resumes.setState(0);
+        resumes.setRid(0);
+        if (resumeService.updateResumeState(resumes)){
+            session.setAttribute("r99","取消成功");
+            return "tourist";
+        }else{
+            session.setAttribute("r99","取消不成功");
             return "tourist";
         }
     }

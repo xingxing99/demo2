@@ -40,4 +40,9 @@ public class RecruitServiceImpl implements RecruitService {
     public Recruit selectRecruitById(int id) {
         return recruitMapper.selectRecruitById(id);
     }
+
+    @Override
+    public List<Recruit> selectRecruitByState(int state) {
+        return recruitMapper.selectRecruitByState(state);
+    }
 }

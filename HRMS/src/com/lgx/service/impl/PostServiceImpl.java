@@ -22,4 +22,23 @@ public class PostServiceImpl implements PostService {
     public List<Post> selectPost() {
         return postMapper.selectPost();
     }
+
+    @Override
+    public boolean deletePostByDid(int did) {
+        try {
+            return postMapper.deletePostByDid(did);
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+    @Override
+    public boolean addPost(Post post) {
+        return postMapper.addPost(post);
+    }
+
+    @Override
+    public boolean deletePostById(int id) {
+        return postMapper.deletePostById(id);
+    }
 }

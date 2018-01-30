@@ -7,4 +7,5 @@ import java.util.List;
 public interface DeptMapper {
     List<Dept> selectDept();
     boolean addDept(Dept dept);
+    boolean deleteDept(int did);
 }

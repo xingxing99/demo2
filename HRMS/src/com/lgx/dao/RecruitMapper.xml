@@ -9,9 +9,12 @@
         update recruit set state=#{state} where id=#{id}
     </update>
     <select id="selectRecruit" resultType="com.lgx.model.Recruit">
-        select * from recruit;
+        select * from recruit
     </select>
     <select id="selectRecruitById" resultType="com.lgx.model.Recruit">
         select * from recruit where id=#{id}
+    </select>
+    <select id="selectRecruitByState" resultType="com.lgx.model.Recruit">
+        select * from recruit where state=#{0}
     </select>
 </mapper>

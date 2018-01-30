@@ -10,6 +10,6 @@ public interface ResumeService {
     boolean addResume(Resume resume);
     boolean updateResume(Resume resume);
     boolean updateResumeState(Resume resume);
-    Resume selectResumeByState(Resume resume);
+    List<Resume> selectResumeByState(int i,int j);
     boolean updateResumeState2(Resume resume);
 }

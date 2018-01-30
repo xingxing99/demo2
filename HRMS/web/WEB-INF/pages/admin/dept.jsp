@@ -16,10 +16,26 @@
 <head>
     <base href="<%=basePath%>"/>
     <title></title>
+    <script src="js/jquery-3.1.0.js"></script>
+    <script>
+        function dept() {
+            var r = prompt("请输入部门名称","name");
+            if (r!=null&&r!=""){
+                $("#dname").val(r);
+                return true;
+            }else{
+                return false;
+            }
+        }
+
+    </script>
 </head>
 <body>
 ${sessionScope.d1}
-<a href="addDept">添加部门</a>
+<form action="addDept" method="post" onsubmit="return dept()">
+    <input type="hidden" id="dname" name="dname">
+    <input type="submit" value="添加部门">
+</form>
 <table border="1" cellpadding="1" cellspacing="0">
     <tr>
         <th>部门ID</th>
@@ -35,7 +51,7 @@ ${sessionScope.d1}
             <a href="selectPost?did=${depts.did}">查看部门职位</a>
         </td>
         <td>
-            <a href="">删除</a>
+            <a href="deleteDept?did=${depts.did}">删除</a>
         </td>
     </tr>
 </c:forEach>

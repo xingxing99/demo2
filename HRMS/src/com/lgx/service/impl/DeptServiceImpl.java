@@ -26,4 +26,13 @@ public class DeptServiceImpl implements DeptService {
             return false;
         }
     }
+
+    @Override
+    public boolean deleteDept(int did) {
+        try {
+            return deptMapper.deleteDept(did);
+        } catch (Exception e) {
+            return false;
+        }
+    }
 }

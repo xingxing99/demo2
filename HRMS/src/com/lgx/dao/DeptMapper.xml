@@ -4,6 +4,9 @@
     <insert id="addDept">
       INSERT into dept(dname, createTime) VALUES (#{dname},#{createTime})
     </insert>
+    <delete id="deleteDept">
+        DELETE from dept where did=#{0}
+    </delete>
     <select id="selectDept" resultType="com.lgx.model.Dept">
         select * from dept
     </select>

@@ -6,16 +6,16 @@ public class Post implements Serializable {
     private int id;
     private String name;//职位名称
     private int did;//对应部门
-    private String describe;//描述
+    private String description;//描述
 
     public Post() {
     }
 
-    public Post(int id, String name, int did, String describe) {
+    public Post(int id, String name, int did, String description) {
         this.id = id;
         this.name = name;
         this.did = did;
-        this.describe = describe;
+        this.description = description;
     }
 
     public int getId() {
@@ -42,12 +42,12 @@ public class Post implements Serializable {
         this.did = did;
     }
 
-    public String getDescribe() {
-        return describe;
+    public String getDescription() {
+        return description;
     }
 
-    public void setDescribe(String describe) {
-        this.describe = describe;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     @Override
@@ -56,7 +56,7 @@ public class Post implements Serializable {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", did=" + did +
-                ", describe='" + describe + '\'' +
+                ", description='" + description + '\'' +
                 '}';
     }
 }

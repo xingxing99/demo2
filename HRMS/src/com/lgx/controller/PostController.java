@@ -1,7 +1,9 @@
 package com.lgx.controller;
 
 import com.lgx.model.Dept;
+import com.lgx.model.Employee;
 import com.lgx.model.Post;
+import com.lgx.service.EmployeeService;
 import com.lgx.service.PostService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,6 +16,8 @@ import java.util.List;
 public class PostController {
     @Resource
     private PostService postService;
+    @Resource
+    private EmployeeService employeeService;
 
     @RequestMapping("selectPost")
     public String selectPost(int did, HttpSession session)throws Exception{
@@ -23,5 +27,36 @@ public class PostController {
             return "admin/post";
         }
         return "admin/post";
+    }
+
+    @RequestMapping("addPost")
+    public String addPost(int did,HttpSession session)throws Exception{
+        session.setAttribute("did",did);
+        return "admin/addPost";
+    }
+
+    @RequestMapping("addPost1")
+    public String addPost1(int did,Post post,HttpSession session)throws Exception{
+        if (postService.addPost(post)){
+            List<Post> posts = postService.selectPostByDid(did);
+            session.setAttribute("post",posts);
+            return "admin/post";
+        }else{
+            session.setAttribute("p1","添加失败");
+            return "admin/post";
+        }
+    }
+
+    @RequestMapping("deletePost")
+    public String deletePost(int id,HttpSession session,int did)throws Exception{
+        List<Employee> employees = employeeService.selectEmployeeByPid(id);
+        if (employees.size()!=0){
+            return "admin/post";
+        }else{
+            postService.deletePostById(id);
+            List<Post> posts = postService.selectPostByDid(did);
+            session.setAttribute("post",posts);
+            return "admin/post";
+        }
     }
 }
