@@ -78,6 +78,8 @@ public class DeptController {
     public String selectPostByPid(int pid,HttpSession session)throws Exception{
         List<Employee> employees = employeeService.selectEmployeeByPid(pid);
         if (employees.size()!=0){
+            List<Dept> depts = deptService.selectDept();
+            session.setAttribute("depts",depts);
             List<Post> posts = postService.selectPost();
             session.setAttribute("post",posts);
             session.setAttribute("employee",employees);

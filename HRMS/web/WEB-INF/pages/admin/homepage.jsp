@@ -18,8 +18,8 @@
 <body>
 ${sessionScope.r10}
 ${sessionScope.r1}
-<a href="selectDept">查看所有部门</a>
-<a href="selectRecruit">查看招聘信息</a>
+<a href="selectDept">部门管理</a>
+<a href="selectRecruit">招聘管理</a>
 <a href="selectResumeByState">查看职位申请</a>
 </body>
 </html>

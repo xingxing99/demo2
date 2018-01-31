@@ -22,27 +22,31 @@
         <th>姓名</th>
         <th>年龄</th>
         <th>性别</th>
+        <th>部门</th>
         <th>职位</th>
         <th>状态</th>
         <th>录取时间</th>
     </tr>
     <c:forEach items="${sessionScope.employee}" var="e">
         <c:forEach items="${sessionScope.post}" var="p">
-            <c:if test="${e.pid==p.id}">
-                <tr>
-                    <td>${e.name}</td>
-                    <td>${e.age}</td>
-                    <td>${e.sex}</td>
-                    <td>${p.name}</td>
-                    <c:if test="${e.state==0}">
-                        <td>离职</td>
-                    </c:if>
-                    <c:if test="${e.state==1}">
-                        <td>在职</td>
-                    </c:if>
-                    <td>${e.createTime}</td>
-                </tr>
-            </c:if>
+            <c:forEach items="${sessionScope.depts}" var="d">
+                <c:if test="${e.pid==p.id&&d.did==p.did}">
+                    <tr>
+                        <td>${e.name}</td>
+                        <td>${e.age}</td>
+                        <td>${e.sex}</td>
+                        <td>${d.dname}</td>
+                        <td>${p.name}</td>
+                        <c:if test="${e.state==0}">
+                            <td>离职</td>
+                        </c:if>
+                        <c:if test="${e.state==1}">
+                            <td>在职</td>
+                        </c:if>
+                        <td>${e.createTime}</td>
+                    </tr>
+                </c:if>
+            </c:forEach>
         </c:forEach>
     </c:forEach>
 </table>

@@ -19,8 +19,8 @@
 ${sessionScope.t1}
 ${sessionScope.r8}
 ${sessionScope.r99}
-<a href="selectResume">查看简历</a>
-<a href="getAllRecruit">查看招聘信息</a>
-<a href="selectInform">查看面试信息</a>
+<a href="selectResume">简历管理</a>
+<a href="getAllRecruit">招聘管理</a>
+<a href="selectInform">面试管理</a>
 </body>
 </html>
