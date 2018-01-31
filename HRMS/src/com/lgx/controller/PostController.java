@@ -7,9 +7,13 @@ import com.lgx.service.EmployeeService;
 import com.lgx.service.PostService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.io.IOException;
 import java.util.List;
 
 @Controller
@@ -58,5 +62,12 @@ public class PostController {
             session.setAttribute("post",posts);
             return "admin/post";
         }
+    }
+
+    @RequestMapping(value = "listPostByDeptId",method = RequestMethod.POST)
+    public @ResponseBody Object[] listPostByDeptId(int deptId){
+        List<Post> posts = postService.selectPostByDid(deptId);
+        Object[] array = posts.toArray();
+        return array;
     }
 }

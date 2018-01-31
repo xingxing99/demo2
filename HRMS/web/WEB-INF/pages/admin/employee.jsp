@@ -15,6 +15,14 @@
 <head>
     <base href="<%=basePath%>"/>
     <title></title>
+    <script src="js/jquery-3.1.0.js"></script>
+    <script>
+        $(function () {
+            $("#d1").click(function () {
+                $("#d2").css("display","block")
+            })
+        })
+    </script>
 </head>
 <body>
 <table border="1" cellpadding="1" cellspacing="0">
@@ -44,7 +52,27 @@
                             <td>在职</td>
                         </c:if>
                         <td>${e.createTime}</td>
+                        <td>
+                            <div id="d1">
+                                <input value="换岗" type="submit">
+                            </div>
+                        </td>
                     </tr>
+                    <div id="d2" style="display: none">
+                        <form action="changePost" method="post">
+                            <input type="hidden" name="id" value="${e.id}"></br>
+                            选择部门：
+                            <select name="dept" id="dept">
+                                <option value="-1">--请选择--</option>
+                            </select>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            选择岗位：
+                            <select name="id" id="job">
+                                <option value="-1">--请选择--</option>
+                            </select>
+                            <input type="submit" value="换岗"></br>
+                        </form>
+                    </div>
                 </c:if>
             </c:forEach>
         </c:forEach>

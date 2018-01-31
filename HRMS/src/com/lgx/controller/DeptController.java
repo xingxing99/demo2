@@ -8,8 +8,11 @@ import com.lgx.service.EmployeeService;
 import com.lgx.service.PostService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.util.Date;
 import java.util.List;
@@ -86,5 +89,12 @@ public class DeptController {
             return "admin/employee";
         }
         return "admin/employee";
+    }
+
+    @RequestMapping(value = "listDepts",method = RequestMethod.POST)
+    public @ResponseBody Object[] listDepts(HttpServletResponse response){
+        List<Dept> depts = deptService.selectDept();
+        Object[] array =  depts.toArray();
+        return array;
     }
 }

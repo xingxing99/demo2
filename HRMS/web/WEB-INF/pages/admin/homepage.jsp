@@ -21,5 +21,6 @@ ${sessionScope.r1}
 <a href="selectDept">部门管理</a>
 <a href="selectRecruit">招聘管理</a>
 <a href="selectResumeByState">查看职位申请</a>
+<a href="#">培训管理</a>
 </body>
 </html>
