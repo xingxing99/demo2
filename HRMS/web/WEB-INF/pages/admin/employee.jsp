@@ -57,6 +57,7 @@
                                 <input value="换岗" type="submit">
                             </div>
                         </td>
+                        <td><a href="updateEmployeeState?id=${e.id}">解雇</a></td>
                     </tr>
                     <div id="d2" style="display: none">
                         <form action="changePost" method="post">
