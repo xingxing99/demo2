@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.lgx.dao.TrainMapper">
+    <insert id="addTrain">
+        insert into train(beginTime, endTime, name, content, state) VALUES
+        (#{beginTime},#{endTime},#{name},#{content},#{state})
+    </insert>
+    <delete id="deleteTrain">
+        delete from train where id=#{id}
+    </delete>
+    <select id="getAllTrain" resultType="com.lgx.model.Train">
+        select * from train
+    </select>
+</mapper>

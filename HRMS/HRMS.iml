@@ -26,6 +26,16 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
+          <root url="file://$MODULE_DIR$/web/js" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+        <jarDirectory url="file://$MODULE_DIR$/web/js" recursive="false" />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
           <root url="file://$MODULE_DIR$/web/WEB-INF/lib" />
         </CLASSES>
         <JAVADOC />
@@ -36,16 +46,7 @@
         <jarDirectory url="file://$MODULE_DIR$/web/WEB-INF/lib" recursive="false" type="SOURCES" />
       </library>
     </orderEntry>
-    <orderEntry type="library" name="json-lib-2.4-jdk15" level="project" />
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="file://$MODULE_DIR$/web/js" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-        <jarDirectory url="file://$MODULE_DIR$/web/js" recursive="false" />
-      </library>
-    </orderEntry>
+    <orderEntry type="library" name="json-lib-2.4-jdk15 (2)" level="project" />
+    <orderEntry type="library" name="jackson-annotations-2.2.1" level="project" />
   </component>
 </module>

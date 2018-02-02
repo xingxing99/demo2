@@ -5,6 +5,12 @@
         insert into employee(pid, state, uid, createTime, name, sex, age, tid) VALUES
         (#{pid},#{state},#{uid},#{createTime},#{name},#{sex},#{age},#{tid})
     </insert>
+    <update id="updateEmployeeState">
+        update employee set state=0,explain=#{explain} where id =#{id}
+    </update>
+    <update id="updateEmployeePid">
+        update employee set pid=#{pid} where id=#{id}
+    </update>
     <select id="selectEmployeeByUid" resultType="com.lgx.model.Employee">
         select * from employee where uid =#{1}
     </select>

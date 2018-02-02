@@ -27,4 +27,18 @@ public class EmployeeServiceImpl implements EmployeeService {
     public List<Employee> selectEmployeeByPid(int pid) {
         return employeeMapper.selectEmployeeByPid(pid);
     }
+
+    @Override
+    public boolean updateEmployeeState(Employee employee) {
+        try {
+            return employeeMapper.updateEmployeeState(employee);
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+    @Override
+    public boolean updateEmployeePid(Employee employee) {
+        return employeeMapper.updateEmployeePid(employee);
+    }
 }

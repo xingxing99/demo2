@@ -25,8 +25,8 @@ ${sessionScope.p1}
         <th>部门</th>
         <th>职位介绍</th>
     </tr>
-    <c:forEach items="${sessionScope.post}" var="post">
-        <c:forEach items="${sessionScope.depts}" var="depts">
+    <c:forEach items="${sessionScope.depts}" var="depts">
+        <c:forEach items="${sessionScope.post}" var="post">
             <c:if test="${post.did==depts.did}">
                 <tr>
                     <td>${post.id}</td>
@@ -44,10 +44,10 @@ ${sessionScope.p1}
                         </form>
                     </td>
                 </tr>
-                <a href="addPost?did=${depts.did}">添加职位</a>
             </c:if>
         </c:forEach>
     </c:forEach>
+    <a href="addPost?did=${sessionScope.did}">添加职位</a>
 </table>
 </body>
 </html>

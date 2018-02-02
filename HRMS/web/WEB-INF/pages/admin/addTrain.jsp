@@ -1,9 +1,8 @@
-
 <%--
   Created by IntelliJ IDEA.
   User: 刘广兴1
-  Date: 2018/1/30
-  Time: 15:34
+  Date: 2018/2/2
+  Time: 16:11
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -17,10 +16,11 @@
     <title></title>
 </head>
 <body>
-<form action="addPost1" method="post">
-    <input type="hidden" value="${sessionScope.did}" name="did">
-    职位名称:<input type="text" name="name"><br>
-    职位描述:<input type="text" name="description"><br>
+<form action="addTrain" method="post">
+    培训名称:<input name="name">
+    培训内容:<input name="content">
+    开始时间:<input type="date" name="beginTime">
+    结束时间:<input type="date" name="endTime">
     <input type="submit" value="添加">
 </form>
 </body>

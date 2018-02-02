@@ -87,14 +87,9 @@ public class DeptController {
             session.setAttribute("post",posts);
             session.setAttribute("employee",employees);
             return "admin/employee";
+        }else{
+            session.setAttribute("employee",employees);
+            return "admin/employee";
         }
-        return "admin/employee";
-    }
-
-    @RequestMapping(value = "listDepts",method = RequestMethod.POST)
-    public @ResponseBody Object[] listDepts(HttpServletResponse response){
-        List<Dept> depts = deptService.selectDept();
-        Object[] array =  depts.toArray();
-        return array;
     }
 }

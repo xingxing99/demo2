@@ -23,6 +23,17 @@
             })
         })
     </script>
+    <script>
+        function check() {
+            var r = prompt("请输入解雇原因","原因");
+            if (r!=null&&r!=""){
+                $("#explain").val(r);
+                return true;
+            }else{
+                return false;
+            }
+        }
+    </script>
 </head>
 <body>
 <table border="1" cellpadding="1" cellspacing="0">
@@ -53,31 +64,39 @@
                         </c:if>
                         <td>${e.createTime}</td>
                         <td>
-                            <div id="d1">
-                                <input value="换岗" type="submit">
-                            </div>
+                            <a href="jump?eid=${e.id}">换岗</a>
                         </td>
-                        <td><a href="updateEmployeeState?id=${e.id}">解雇</a></td>
+                        <td>
+                            <c:if test="${e.state==1}">
+                                <form action="updateEmmployeeState" method="post" onsubmit="return check()">
+                                    <input type="submit" value="解雇">
+                                    <input type="hidden" name="id" value="${e.id}">
+                                    <input type="hidden" id="explain" name="explain">
+                                </form>
+                            </c:if>
+                        </td>
                     </tr>
-                    <div id="d2" style="display: none">
-                        <form action="changePost" method="post">
-                            <input type="hidden" name="id" value="${e.id}"></br>
-                            选择部门：
-                            <select name="dept" id="dept">
-                                <option value="-1">--请选择--</option>
-                            </select>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            选择岗位：
-                            <select name="id" id="job">
-                                <option value="-1">--请选择--</option>
-                            </select>
-                            <input type="submit" value="换岗"></br>
-                        </form>
-                    </div>
                 </c:if>
             </c:forEach>
         </c:forEach>
     </c:forEach>
 </table>
+<div id="d2" style="display: none">
+    <form action="changePost" method="post">
+        选择部门：
+        <select id="dept">
+            <option value="0">--请选择--</option>
+            <c:forEach items="${sessionScope.depts}" var="dp">
+                <option value="${dp.did}">${dp.dname}</option>
+            </c:forEach>
+        </select>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        选择岗位：
+        <select id="post">
+            <option value="0">--请选择--</option>
+        </select>
+        <input type="submit" value="换岗"></br>
+    </form>
+</div>
 </body>
 </html>

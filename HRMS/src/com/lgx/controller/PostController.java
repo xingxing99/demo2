@@ -27,10 +27,14 @@ public class PostController {
     public String selectPost(int did, HttpSession session)throws Exception{
         List<Post> posts = postService.selectPostByDid(did);
         if (posts.size()!=0){
+            session.setAttribute("did",did);
+            session.setAttribute("post",posts);
+            return "admin/post";
+        }else{
+            session.setAttribute("did",did);
             session.setAttribute("post",posts);
             return "admin/post";
         }
-        return "admin/post";
     }
 
     @RequestMapping("addPost")
@@ -64,10 +68,15 @@ public class PostController {
         }
     }
 
-    @RequestMapping(value = "listPostByDeptId",method = RequestMethod.POST)
-    public @ResponseBody Object[] listPostByDeptId(int deptId){
-        List<Post> posts = postService.selectPostByDid(deptId);
-        Object[] array = posts.toArray();
-        return array;
+    @RequestMapping("listPostByDeptId")
+    public @ResponseBody List<Post> listPostByDeptId(int did){
+        List<Post> positions = postService.selectPostByDid(did);
+        return positions;
+    }
+
+    @RequestMapping("jump")
+    public String jump(int eid,HttpSession session){
+        session.setAttribute("eid",eid);
+        return "admin/new";
     }
 }

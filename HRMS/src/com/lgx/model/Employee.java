@@ -13,11 +13,12 @@ public class Employee implements Serializable{
     private int uid;//对应游客表
     private int tid;//对应培训表
     private Date createTime;
+    private String explain;//说明
 
     public Employee() {
     }
 
-    public Employee(int id, String name, String sex, int age, int state, int pid, int uid, int tid, Date createTime) {
+    public Employee(int id, String name, String sex, int age, int state, int pid, int uid, int tid, Date createTime, String explain) {
         this.id = id;
         this.name = name;
         this.sex = sex;
@@ -27,6 +28,7 @@ public class Employee implements Serializable{
         this.uid = uid;
         this.tid = tid;
         this.createTime = createTime;
+        this.explain = explain;
     }
 
     public int getId() {
@@ -101,9 +103,17 @@ public class Employee implements Serializable{
         this.createTime = createTime;
     }
 
+    public String getExplain() {
+        return explain;
+    }
+
+    public void setExplain(String explain) {
+        this.explain = explain;
+    }
+
     @Override
     public String toString() {
-        return "EmployeeMapper{" +
+        return "Employee{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", sex='" + sex + '\'' +
@@ -113,6 +123,7 @@ public class Employee implements Serializable{
                 ", uid=" + uid +
                 ", tid=" + tid +
                 ", createTime=" + createTime +
+                ", explain='" + explain + '\'' +
                 '}';
     }
 }
