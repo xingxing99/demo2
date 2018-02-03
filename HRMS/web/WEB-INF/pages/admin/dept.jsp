@@ -27,7 +27,6 @@
                 return false;
             }
         }
-
     </script>
 </head>
 <body>
@@ -52,6 +51,9 @@ ${sessionScope.d1}
         </td>
         <td>
             <a href="deleteDept?did=${depts.did}">删除</a>
+        </td>
+        <td>
+            <a href="arrangeTrain?did=${depts.did}">安排培训</a>
         </td>
     </tr>
 </c:forEach>

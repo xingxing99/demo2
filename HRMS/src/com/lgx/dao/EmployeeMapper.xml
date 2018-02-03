@@ -11,6 +11,9 @@
     <update id="updateEmployeePid">
         update employee set pid=#{pid} where id=#{id}
     </update>
+    <update id="updateEmployeeTid">
+        UPDATE  employee set tid=#{tid} where id=#{id}
+    </update>
     <select id="selectEmployeeByUid" resultType="com.lgx.model.Employee">
         select * from employee where uid =#{1}
     </select>

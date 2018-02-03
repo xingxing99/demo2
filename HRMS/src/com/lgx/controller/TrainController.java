@@ -1,19 +1,29 @@
 package com.lgx.controller;
 
+import com.lgx.model.Employee;
+import com.lgx.model.Post;
 import com.lgx.model.Train;
+import com.lgx.service.DeptService;
+import com.lgx.service.EmployeeService;
+import com.lgx.service.PostService;
 import com.lgx.service.TrainService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 @Controller
 public class TrainController {
     @Resource
     private TrainService trainService;
-
+    @Resource
+    private PostService postService;
+    @Resource
+    private EmployeeService employeeService;
     @RequestMapping("selectTrain")
     public String selectTrain(HttpSession session)throws Exception{
         List<Train> trains = trainService.getAllTrain();
@@ -64,6 +74,35 @@ public class TrainController {
                 session.setAttribute("info", "更改成功");
                 session.setAttribute("trains", trainService.getAllTrain());
                 return "admin/train";
+            }
+        }
+        return "null";
+    }
+
+    @RequestMapping("arrangeTrain")
+    public String arrangeTrain(int did,HttpSession session)throws Exception{
+        session.setAttribute("did",did);
+        session.setAttribute("trains",trainService.getAllTrain());
+        return "admin/selectTrain";
+    }
+
+    @RequestMapping("arrangeTrain1")
+    public String arrangeTrain1(int did,int id,String beginTime)throws Exception {
+        Date date = new Date();
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd hh:mm");
+        Date date1 = sdf.parse(beginTime);
+        if (date.getTime() < date1.getTime()) {
+            List<Post> posts = postService.selectPostByDid(did);
+            for (Post post : posts) {
+                List<Employee> employees = employeeService.selectEmployeeByPid(post.getId());
+                for (Employee employee : employees) {
+                    if (employee.getTid()==0){
+                        employee.setTid(id);
+                        employee.setId(employee.getId());
+                        employeeService.updateEmployeeTid(employee);
+                        return "admin/homepage";
+                    }
+                }
             }
         }
         return "null";

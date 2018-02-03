@@ -41,4 +41,13 @@ public class EmployeeServiceImpl implements EmployeeService {
     public boolean updateEmployeePid(Employee employee) {
         return employeeMapper.updateEmployeePid(employee);
     }
+
+    @Override
+    public boolean updateEmployeeTid(Employee employee) {
+        try {
+            return employeeMapper.updateEmployeeTid(employee);
+        } catch (Exception e) {
+            return false;
+        }
+    }
 }
