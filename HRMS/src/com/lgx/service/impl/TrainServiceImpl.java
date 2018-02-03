@@ -31,4 +31,13 @@ public class TrainServiceImpl implements TrainService {
             return false;
         }
     }
+
+    @Override
+    public boolean updateTrain(Train train) {
+        try {
+            return trainMapper.updateTrain(train);
+        } catch (Exception e) {
+            return false;
+        }
+    }
 }

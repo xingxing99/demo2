@@ -17,9 +17,9 @@
 </head>
 <body>
 <form action="addTrain" method="post">
-    培训名称:<input name="name">
-    培训内容:<input name="content">
-    开始时间:<input type="date" name="beginTime">
+    培训名称:<input name="name"><br>
+    培训内容:<input name="content"><br>
+    开始时间:<input type="date" name="beginTime"><br>
     结束时间:<input type="date" name="endTime">
     <input type="submit" value="添加">
 </form>

@@ -5,6 +5,9 @@
         insert into train(beginTime, endTime, name, content, state) VALUES
         (#{beginTime},#{endTime},#{name},#{content},#{state})
     </insert>
+    <update id="updateTrain">
+        update train SET beginTime=#{beginTime},endTime=#{endTime},name=#{name},content=#{content} where id=#{id}
+    </update>
     <delete id="deleteTrain">
         delete from train where id=#{id}
     </delete>

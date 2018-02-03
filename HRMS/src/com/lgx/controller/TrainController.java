@@ -54,4 +54,18 @@ public class TrainController {
         }
         return "null";
     }
+    @RequestMapping("updateTrain")
+    public String updateTrain(int state,Train train,HttpSession session)throws Exception{
+        if (state == 1) {
+            session.setAttribute("info", "更改失败，培训已有员工参加");
+            return "admin/train";
+        }else{
+            if (trainService.updateTrain(train)){
+                session.setAttribute("info", "更改成功");
+                session.setAttribute("trains", trainService.getAllTrain());
+                return "admin/train";
+            }
+        }
+        return "null";
+    }
 }

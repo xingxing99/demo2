@@ -8,4 +8,5 @@ public interface TrainService {
     List<Train> getAllTrain();
     boolean addTrain(Train train);
     boolean deleteTrain(Train train);
+    boolean updateTrain(Train train);
 }
